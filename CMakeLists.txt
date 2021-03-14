@@ -102,6 +102,11 @@ if(APPLE)
     set(EXTRA_LIBRARIES "${EXTRA_LIBRARIES} -framework Carbon -framework IOKit")
 endif()
 
+if(BITTBOY)
+	message(STATUS "Building for Bittboy...")
+	set(EXTRA_LIBRARIES "${EXTRA_LIBRARIES} -lmpg123 -lfreetype -lSDL_image -lbz2 -lz -lpng -lvorbisfile -lvorbis -logg -lmikmod -ljpeg -lasound")
+endif()
+
 add_executable(falling_time MACOSX_BUNDLE ${SOURCES} ${HEADERS} ${EXTRA_FILES})
 if(APPLE)
 	set_target_properties(falling_time PROPERTIES
