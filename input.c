@@ -25,7 +25,12 @@
 
 #define P1_LEFT SDLK_LEFT
 #define P1_RIGHT SDLK_RIGHT
-#ifdef __GCW0__
+#if defined(__GCW0__)
+#define P2_LEFT0 SDLK_LSHIFT
+#define P2_RIGHT0 SDLK_LCTRL
+#define P2_LEFT1 SDLK_SPACE
+#define P2_RIGHT1 SDLK_LALT
+#elif defined(__RETROFW__)
 #define P2_LEFT0 SDLK_LSHIFT
 #define P2_RIGHT0 SDLK_LCTRL
 #define P2_LEFT1 SDLK_SPACE

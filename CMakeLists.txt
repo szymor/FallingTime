@@ -107,6 +107,11 @@ if(BITTBOY)
 	set(EXTRA_LIBRARIES "${EXTRA_LIBRARIES} -lmpg123 -lfreetype -lSDL_image -lbz2 -lz -lpng -lvorbisfile -lvorbis -logg -lmikmod -ljpeg -lasound")
 endif()
 
+if(RETROFW)
+	message(STATUS "Building for RetroFW...")
+	add_definitions(-D__RETROFW__)
+endif()
+
 add_executable(falling_time MACOSX_BUNDLE ${SOURCES} ${HEADERS} ${EXTRA_FILES})
 if(APPLE)
 	set_target_properties(falling_time PROPERTIES
