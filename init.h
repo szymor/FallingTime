@@ -22,7 +22,7 @@
 
 #define SCREEN_WIDTH  320
 #define SCREEN_HEIGHT 240
-#ifdef __GCW0__
+#if defined(__GCW0__) || defined(__RETROFW__)
 #define SCREEN_SCALE 1
 #else
 #define SCREEN_SCALE 2

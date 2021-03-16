@@ -17,6 +17,11 @@ if("${CMAKE_C_COMPILER_ID}" STREQUAL "Clang")
     set(CLANG 1)
 endif()
 
+if(RETROFW)
+	message(STATUS "Building for RetroFW...")
+	add_definitions(-D__RETROFW__)
+endif()
+
 # Chipmunk 2D
 set(BUILD_STATIC ON FORCE)
 set(chipmunk_SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/chipmunk)
