@@ -6,7 +6,7 @@
 
 #include <pthread.h>
 //#include <sys/param.h >
-#include <sys/sysctl.h>
+#include <linux/sysctl.h>
 
 #include "chipmunk/chipmunk_private.h"
 #include "chipmunk/cpHastySpace.h"
