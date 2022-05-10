@@ -4,15 +4,6 @@ falling_time.opk
 .opk_data/
 libchipmunk.a
 
-# CMake
-_CPack_Packages/
-CMakeFiles/
-CMakeCache.txt
-cmake_install.cmake
-CPackConfig.cmake
-CPackSourceConfig.cmake
-install_manifest.txt
-
 # Windows
 *.vcxproj*
 *.opensdf

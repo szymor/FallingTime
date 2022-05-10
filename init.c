@@ -42,7 +42,7 @@ SDL_Surface *icon = NULL;
 
 void Initialize(bool* Continue, bool* Error)
 {
-	if (SDL_Init(SDL_INIT_VIDEO | SDL_INIT_AUDIO | SDL_INIT_JOYSTICK) < 0)
+	if (SDL_Init(SDL_INIT_VIDEO | SDL_INIT_AUDIO) < 0)
 	{
 		*Continue = false;  *Error = true;
 		printf("SDL initialisation failed: %s\n", SDL_GetError());
@@ -52,13 +52,7 @@ void Initialize(bool* Continue, bool* Error)
 	else
 		printf("SDL initialisation succeeded\n");
 
-	Screen = SDL_SetVideoMode(SCREEN_WIDTH, SCREEN_HEIGHT, 32, SDL_HWSURFACE |
-#ifdef SDL_TRIPLEBUF
-		SDL_TRIPLEBUF
-#else
-		SDL_DOUBLEBUF
-#endif
-		);
+	Screen = SDL_SetVideoMode(SCREEN_WIDTH, SCREEN_HEIGHT, 32, SDL_HWSURFACE | SDL_DOUBLEBUF);
 
 	if (Screen == NULL)
 	{
